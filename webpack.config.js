@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: './index.js',
@@ -15,9 +14,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DefinePlugin({
-            PRODUCTION: 'ANDROID'
-        }),
         new webpack.NormalModuleReplacementPlugin(
             /(.*)_PLATFORM(\.*)/,
             function(resource){
